@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shahbaz Alam - Data Analyst Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Header & Navigation -->
+    <header class="header">
+        <div class="logo">Shahbaz Alam</div>
+        <nav class="nav">
+            <a href="#hero">Home</a>
+            <a href="#skills">Skills</a>
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#education">Education</a>
+            <a href="#awards">Awards</a>
+            <a href="#contact">Contact</a>
+        </nav>
+        <button class="theme-toggle">☀️</button>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <div class="hero-content">
+            <h1 class="hero-name">Shahbaz Alam</h1>
+            <h2 class="hero-title">Aspiring Data Analyst</h2>
+            <p class="hero-tagline">Transforming raw data into actionable insights through robust analysis and visualization.</p>
+        </div>
+        <div class="hero-image-container">
+            <!-- Ensure my.jpg is in the same folder as this HTML file -->
+            <img src="pic1.jpg" alt="Shahbaz Alam Portrait" class="hero-portrait" onerror="this.onerror=null;this.src='https://placehold.co/400x400/242424/ffffff?text=Your+Portrait';">
+        </div>
+    </section>
+
+    <!-- Technical Skills Section -->
+    <section id="skills" class="skills">
+        <h2 class="section-title">Technical Skills</h2>
+        <div class="skills-container">
+            <div class="skill-category">
+                <h3>Programming & Libraries</h3>
+                <ul>
+                    <li>Python (Pandas, NumPy, Matplotlib, Seaborn,Scikit-learn)</li>
+                </ul>
+            </div>
+            <div class="skill-category">
+                <h3>Databases & Data Handling</h3>
+                <ul>
+                    <li>MySQL, MongoDB</li>
+                    <li>Data Gathering, Cleaning, Preprocessing</li>
+                </ul>
+            </div>
+            <div class="skill-category">
+                <h3>Data Analysis & Modeling</h3>
+                <ul>
+                    <li>Data Analytics, Exploratory Data Analysis (EDA)</li>
+                    <li>Statistical Methods</li>
+                    <li>Machine Learning (Logistic Regression, Random Forest)</li>
+                </ul>
+            </div>
+            <div class="skill-category">
+                <h3>Visualization & Reporting</h3>
+                <ul>
+                    <li>Power BI, MS Excel, Tableau</li>
+                    <li>Dashboard Creation, Data Visualization, Report Generation</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Me Section -->
+    <section id="about" class="about">
+        <div class="about-content">
+            <h2 class="section-title">About Me</h2>
+            <p class="profile-summary">I am Shahbaz Alam, a highly motivated and results-driven B.Tech Computer Science and Engineering student with a strong foundation in data analytics, eager to transform raw data into actionable insights.</p>
+            <p class="profile-summary">I am proficient in Python, SQL, MS Excel, and Power BI, specializing in data gathering, cleaning, preprocessing, analysis, visualization, and dashboard creation.</p>
+            <!-- The .skills-grid below is now mostly redundant due to the new dedicated skills section,
+                 but kept for potential future use or if you wish to retain some inline skill display here. -->
+            <div class="skills-grid">
+                <div class="skill-item">Python (Pandas, NumPy, Matplotlib, Seaborn)</div>
+                <div class="skill-item">MySQL, MongoDB</div>
+                <div class="skill-item">Power BI, MS Excel, Tableau</div>
+                <div class="skill-item">Data Analytics & Visualization</div>
+                <div class="skill-item">Machine Learning (Logistic Regression)</div>
+            </div>
+        </div>
+        <div class="about-image">
+            <!-- Placeholder for workspace.jpg, you can replace this with your own image later -->
+            <img src="pic2.jpg" alt="Workspace Background">
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <h2 class="section-title">Projects</h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <!-- Placeholder for project-showcase.jpg, you can replace this with your own image later -->
+                <img src="https://placehold.co/600x400/444444/ffffff?text=Project+1" alt="Project Image">
+                <h3>Heart Disease Prediction</h3>
+                <p>Developed a predictive machine learning model for heart disease risk using Logistic Regression and Random Forest.</p>
+                <div class="tech-stack">Python, Scikit-learn, Pandas</div>
+                <a href="#" class="project-link">View Project</a>
+            </div>
+            <div class="project-card">
+                <!-- Placeholder for project-showcase.jpg, you can replace this with your own image later -->
+                <img src="https://placehold.co/600x400/444444/ffffff?text=Project+2" alt="Project Image">
+                <h3>Sales & HR Dashboards</h3>
+                <p>Designed and deployed interactive Power BI dashboards for sales, product, and customer insights, along with employee attrition analysis.</p>
+                <div class="tech-stack">Power BI, MS Excel</div>
+                <a href="#" class="project-link">View Project</a>
+            </div>
+            <div class="project-card">
+                <!-- Placeholder for project-showcase.jpg, you can replace this with your own image later -->
+                <img src="https://placehold.co/600x400/444444/ffffff?text=Project+3" alt="Project Image">
+                <h3>Titanic & Restaurant Sales Analysis</h3>
+                <p>Performed exploratory data analysis (EDA) on Titanic survival patterns and restaurant sales data using Python.</p>
+                <div class="tech-stack">Python, Pandas, Matplotlib</div>
+                <a href="#" class="project-link">View Project</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="experience"> <!-- Renamed ID from 'experience' to 'education' -->
+        <h2 class="section-title">Education</h2> <!-- Changed title to Education -->
+        <div class="experience-grid">
+            <div class="experience-card">
+                <span class="emoji">🎓</span>
+                <h3>B.Tech in Computer Science and Engineering</h3>
+                <p class="company">Mewat Engineering College, Gurugram University</p>
+                <p class="duration"><b>2021-2025 | Aggregate: 75%</b></p>
+                <ul class="responsibilities">
+                    <li><b>Relevant Coursework</b>: Data Structures and Algorithms, Object Oriented Programming, Databases, Operating Systems, Computer Networks, Discrete Mathematics, Big Data Analytics, Basics of Machine Learning, Neural Networks, Network Security and Cryptography.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Awards & Achievements Section -->
+    <section id="awards" class="awards">
+        <h2 class="section-title">Awards & Certifications</h2>
+        <div class="awards-grid">
+            <div class="award-card">
+                <span class="emoji">🏆</span>
+                <h3>Software Engineering Job Simulation</h3>
+                <p>Goldman Sachs (Forage)</p>
+            </div>
+            <div class="award-card">
+                <span class="emoji">📊</span>
+                <h3>Data Analytics and Visualization Job Simulation</h3>
+                <p>Accenture (Forage)</p>
+            </div>
+            <div class="award-card">
+                <span class="emoji">🤖</span>
+                <h3>Career Essentials in Generative AI</h3>
+                <p>Microsoft and LinkedIn</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <h2 class="section-title">Contact Me</h2>
+        <div class="contact-info">
+            <p>📧 Email: <a href="mailto:shahbaz8193@gmail.com">shahbaz8193@gmail.com</a></p>
+            <p>📞 Phone: <a href="tel:+916207252382">+91 6207252382</a></p>
+            <p>📍 Address: New Delhi, India</p>
+        </div>
+        <form class="contact-form">
+            <div class="form-group">
+                <input type="text" id="name" required>
+                <label for="name">Full Name</label>
+            </div>
+            <div class="form-group">
+                <input type="email" id="email" required>
+                <label for="email">Email Address</label>
+            </div>
+            <div class="form-group">
+                <textarea id="message" rows="5" required></textarea>
+                <label for="message">Your Message</label>
+            </div>
+            <button type="submit" class="submit-btn">Send Message</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2025 Shahbaz Alam. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+Add portfolio index.html
