@@ -1,0 +1,582 @@
+/* General Styles & Variables */
+:root {
+    --primary-black: #000000;
+    --charcoal: #121212;
+    --slate-gray: #242424;
+    --light-gray: #cccccc;
+    --white: #ffffff;
+    --text-color: var(--light-gray);
+    --bg-color: var(--charcoal);
+    --card-bg: var(--slate-gray);
+    --gradient-hero: linear-gradient(135deg, var(--primary-black) 0%, var(--charcoal) 100%);
+    --font-family: 'Inter', sans-serif;
+    --header-height: 60px;
+    --accent-color: #61DAFB; /* A subtle blue for progress bars */
+}
+
+/* Dark mode toggle */
+body.light-mode {
+    --text-color: #242424;
+    --bg-color: #ffffff;
+    --card-bg: #f0f0f0;
+    --gradient-hero: linear-gradient(135deg, #e0e0e0 0%, #f7f7f7 100%);
+    --accent-color: #2196F3; /* A different blue for light mode */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-family);
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    line-height: 1.6;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Header */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: var(--header-height);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5%;
+    background-color: rgba(18, 18, 18, 0.8);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    transition: background-color 0.3s ease;
+}
+
+.header .logo {
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--white);
+}
+
+.header .nav a {
+    color: var(--light-gray);
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.header .nav a:hover {
+    color: var(--white);
+}
+
+/* Sections */
+section {
+    padding: 100px 5%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.section-title {
+    font-size: 3rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 50px;
+    position: relative;
+    color: var(--white);
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: var(--light-gray);
+    margin: 10px auto 0;
+}
+
+/* Hero Section */
+.hero {
+    background: var(--gradient-hero);
+    color: var(--white);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: var(--header-height);
+}
+
+.hero-content {
+    flex: 1;
+    text-align: left;
+}
+
+.hero-name {
+    font-size: 4rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    /* Add animation here */
+}
+
+.hero-title {
+    font-size: 2rem;
+    font-weight: 500;
+    color: var(--light-gray);
+    margin-bottom: 20px;
+}
+
+.hero-tagline {
+    font-size: 1.2rem;
+    font-weight: 300;
+    max-width: 600px;
+}
+
+.hero-image-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-portrait {
+    width: 80%;
+    max-width: 400px;
+    border-radius: 0; /* Already set to 0 for square */
+    border: 5px solid var(--card-bg);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease;
+}
+
+.hero-portrait:hover {
+    transform: scale(1.05);
+}
+
+/* Technical Skills Section (main) */
+.skills {
+    background-color: var(--primary-black);
+}
+
+.skills-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+/* New style for the clickable skill category link */
+.skill-category-link {
+    text-decoration: none; /* Remove underline from link */
+    color: inherit; /* Inherit text color */
+    display: block; /* Make the anchor tag a block to wrap the div */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+}
+
+.skill-category-link:hover {
+    transform: translateY(-8px); /* Lift effect on hover */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4); /* Enhanced shadow on hover */
+}
+
+.skill-category {
+    background-color: var(--card-bg);
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    height: 100%; /* Ensure all cards are same height if content varies */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center; /* Center text within the box */
+    /* Removed individual hover effects from here, as they are now on .skill-category-link */
+}
+
+.skill-category h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: var(--white);
+    border-bottom: 2px solid var(--light-gray);
+    padding-bottom: 10px;
+    width: 100%;
+    text-align: center;
+}
+
+.skill-category ul {
+    list-style: none;
+    padding: 0;
+    width: 100%;
+}
+
+.skill-category ul li {
+    padding: 8px 0;
+    font-size: 1.1rem;
+    color: var(--light-gray);
+    /* No specific flex/icon/proficiency styles here as per the new design */
+}
+
+
+/* About Me Section */
+.about {
+    flex-direction: row;
+    align-items: center;
+    gap: 50px;
+    background-color: var(--charcoal);
+}
+
+.about-content {
+    flex: 2;
+    text-align: left;
+}
+
+.about-image {
+    flex: 1;
+}
+
+.about-image img {
+    width: 100%;
+    border-radius: 0; /* Changed from 10px to 0 for square */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Updated styles for .skills-grid within About Me section */
+.skills-grid {
+    display: grid; /* Use CSS Grid for layout */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive columns */
+    gap: 20px; /* Space between skill items */
+    margin-top: 30px;
+    padding: 0 20px; /* Add padding from left and right */
+}
+
+.skill-item {
+    background-color: var(--card-bg);
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: 500;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Add a subtle shadow to make them "box-like" */
+}
+
+.skill-item:hover {
+    transform: translateY(-5px);
+    background-color: var(--light-gray);
+    color: var(--charcoal);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
+}
+
+/* Projects Section */
+.projects {
+    background-color: var(--charcoal);
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.project-card {
+    background-color: var(--card-bg);
+    padding: 20px;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+.project-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.project-card h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.tech-stack {
+    font-size: 0.9rem;
+    color: var(--light-gray);
+    margin: 10px 0;
+}
+
+.project-link {
+    display: inline-block;
+    color: var(--white);
+    text-decoration: none;
+    border: 2px solid var(--white);
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.project-link:hover {
+    background-color: var(--white);
+    color: var(--charcoal);
+}
+
+/* Experience Section */
+.experience {
+    background-color: var(--primary-black);
+}
+
+.experience-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.experience-card {
+    background-color: var(--card-bg);
+    padding: 25px;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.experience-card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+}
+
+.experience-card .emoji {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    display: inline-block;
+}
+
+.experience-card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 5px;
+}
+
+.experience-card .company {
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: var(--white);
+}
+
+.experience-card .duration {
+    font-size: 0.9rem;
+    color: var(--light-gray);
+    margin-bottom: 15px;
+}
+
+.experience-card .responsibilities {
+    list-style: none;
+    padding-left: 0;
+}
+
+.experience-card .responsibilities li {
+    margin-bottom: 5px;
+    position: relative;
+    padding-left: 20px;
+}
+
+.experience-card .responsibilities li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: var(--light-gray);
+}
+
+/* Awards & Achievements */
+.awards {
+    background-color: var(--charcoal);
+}
+
+.awards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    text-align: center;
+}
+
+.award-card {
+    background-color: var(--card-bg);
+    padding: 25px;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.award-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+.award-card .emoji {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.award-card h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.award-card p {
+    font-size: 0.9rem;
+    color: var(--light-gray);
+}
+
+/* Contact Section */
+.contact {
+    background-color: var(--primary-black);
+}
+
+.contact-info {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.contact-info a {
+    color: var(--white);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-info a:hover {
+    color: var(--light-gray);
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group {
+    position: relative;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 15px;
+    background-color: var(--card-bg);
+    border: 2px solid var(--card-bg);
+    border-radius: 8px;
+    color: var(--white);
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: var(--light-gray);
+}
+
+.form-group label {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    color: var(--light-gray);
+    font-size: 1rem;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus + label,
+.form-group input:not(:placeholder-shown) + label,
+.form-group textarea:focus + label,
+.form-group textarea:not(:placeholder-shown) + label {
+    top: -10px;
+    left: 10px;
+    font-size: 0.8rem;
+    color: var(--white);
+    background-color: var(--primary-black);
+    padding: 0 5px;
+}
+
+.submit-btn {
+    padding: 15px 30px;
+    background-color: var(--light-gray);
+    color: var(--charcoal);
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: var(--white);
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 20px;
+    background-color: var(--slate-gray);
+    color: var(--light-gray);
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .header {
+        padding: 0 20px;
+    }
+
+    .header .nav {
+        display: none; /* Hide navigation on small screens, use hamburger menu */
+    }
+
+    .hero {
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+
+    .hero-content {
+        text-align: center;
+        margin-top: 30px;
+    }
+
+    .hero-name {
+        font-size: 2.5rem;
+    }
+
+    .hero-title {
+        font-size: 1.5rem;
+    }
+
+    .about {
+        flex-direction: column;
+    }
+
+    .about-image {
+        margin-top: 30px;
+    }
+
+    .section-title {
+        font-size: 2.5rem;
+    }
+
+    .skills-container {
+        grid-template-columns: 1fr; /* Stack skill categories on small screens */
+    }
+    .skill-category ul li {
+        flex-direction: column; /* Stack items vertically on very small screens */
+        align-items: flex-start;
+        gap: 5px;
+    }
+    .skill-category ul li .proficiency {
+        margin-left: 0; /* Adjust margin */
+    }
+}
